@@ -2,14 +2,13 @@ const express = require("express");
 const app = express();
 // const MongoClient = require("mongodb").MongoClient;
 const mongoose = require("mongoose");
+require("dotenv/config");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://user:user@cluster0-m1sak.mongodb.net/test?retryWrites=true&w=majority",
-  { useNewUrlParser: true },
-  () => console.log("Connected to DB fam!")
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () =>
+  console.log("Connected to DB fam!")
 );
 
 app.get("/", function(req, res) {
