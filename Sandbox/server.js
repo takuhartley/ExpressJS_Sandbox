@@ -12,7 +12,7 @@ mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () =>
 );
 
 app.get("/", function(req, res) {
-  res.send("Hello World");
+  res.send("Hey there");
 });
 
 app.get("/home", (req, res) => {
