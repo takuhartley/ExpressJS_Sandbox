@@ -3,12 +3,17 @@ const app = express();
 // const MongoClient = require("mongodb").MongoClient;
 const mongoose = require("mongoose");
 const postRoutes = require("./Routes/posts");
+const Post = require('../Sandbox/Models/Post');
 require("dotenv/config");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/posts", postRoutes);
+
+router.post('/', (req, res) => {
+
+})
 
 app.get("/", function(req, res) {
   res.send("Hey there");
